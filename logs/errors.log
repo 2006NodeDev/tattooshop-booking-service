@@ -1,0 +1,59 @@
+[2020-08-09T19:34:56.959] [ERROR] error - error: column s.style does not exist
+    at Parser.parseErrorMessage (C:\Users\ambla\Documents\Revature\project-2\tattooshop-master\tattooshop-booking-service\node_modules\pg-protocol\src\parser.ts:325:11)
+    at Parser.handlePacket (C:\Users\ambla\Documents\Revature\project-2\tattooshop-master\tattooshop-booking-service\node_modules\pg-protocol\src\parser.ts:154:21)
+    at Parser.parse (C:\Users\ambla\Documents\Revature\project-2\tattooshop-master\tattooshop-booking-service\node_modules\pg-protocol\src\parser.ts:106:30)
+    at Socket.<anonymous> (C:\Users\ambla\Documents\Revature\project-2\tattooshop-master\tattooshop-booking-service\node_modules\pg-protocol\src\index.ts:7:48)
+    at Socket.emit (events.js:314:20)
+    at Socket.EventEmitter.emit (domain.js:486:12)
+    at addChunk (_stream_readable.js:304:12)
+    at readableAddChunk (_stream_readable.js:280:9)
+    at Socket.Readable.push (_stream_readable.js:219:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:188:23) {
+  length: 105,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '69',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3359',
+  routine: 'errorMissingColumn'
+}
+[2020-08-09T19:39:16.515] [ERROR] error - error: column "bookings_id" does not exist
+    at Parser.parseErrorMessage (C:\Users\ambla\Documents\Revature\project-2\tattooshop-master\tattooshop-booking-service\node_modules\pg-protocol\src\parser.ts:325:11)
+    at Parser.handlePacket (C:\Users\ambla\Documents\Revature\project-2\tattooshop-master\tattooshop-booking-service\node_modules\pg-protocol\src\parser.ts:154:21)
+    at Parser.parse (C:\Users\ambla\Documents\Revature\project-2\tattooshop-master\tattooshop-booking-service\node_modules\pg-protocol\src\parser.ts:106:30)
+    at Socket.<anonymous> (C:\Users\ambla\Documents\Revature\project-2\tattooshop-master\tattooshop-booking-service\node_modules\pg-protocol\src\index.ts:7:48)
+    at Socket.emit (events.js:314:20)
+    at Socket.EventEmitter.emit (domain.js:486:12)
+    at addChunk (_stream_readable.js:304:12)
+    at readableAddChunk (_stream_readable.js:280:9)
+    at Socket.Readable.push (_stream_readable.js:219:10)
+    at TCP.onStreamRead (internal/stream_base_commons.js:188:23) {
+  length: 178,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: 'Perhaps you meant to reference the column "bookings.booking_id".',
+  position: '191',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3359',
+  routine: 'errorMissingColumn'
+}
+[2020-08-09T19:43:59.132] [ERROR] error - [Function: error]

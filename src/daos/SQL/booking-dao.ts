@@ -82,17 +82,17 @@ export async function submitNewBooking(newBooking: Bookings):Promise<Bookings>{
         client = await connectionPool.connect()
         await client.query('BEGIN;') //start transaction
         //let typeId = await client.query(`select rt.type_id from tattoobooking_booking_service.reimbursement_type rt where rt."type" = $1;`, [newBooking.type])
-        let bookTattoostyle = await client.query(`select s.style_id from ${schema}.styles s where s."style" = $1;`, [newBooking.style])
+        /*let bookTattoostyle = await client.query(`select s.style_id from ${schema}.styles s where s."style" = $1;`, [newBooking.style])
 
         if(bookTattoostyle.rowCount === 0){
             throw new Error('Type not found')
         }else {
             bookTattoostyle = bookTattoostyle.rows[0].style_id
-        }        
+        }*/        
 
-        let results = client.query(`insert into ${schema}.bookings("customer", "style", "size", "location", "image", "color", "artist", "shop", "date") values ($1, $2, $3, $4, $5, $6, $7, $8, $9) returning bookings_id`,
+        let results = client.query(`insert into ${schema}.bookings("customer", "style", "size", "location", "image", "color", "artist", "shop", "date") values ($1, $2, $3, $4, $5, $6, $7, $8, $9) returning booking_id`,
 
-        [newBooking.customer, newBooking.style, newBooking.size, newBooking.location,newBooking.imageTest, newBooking.color, newBooking.artist,newBooking.shop,newBooking.date, bookTattoostyle ])
+        [newBooking.customer, newBooking.style, newBooking.size, newBooking.location, newBooking.imageTest, newBooking.color, newBooking.artist,newBooking.shop,newBooking.date])
        
         newBooking.bookingId = (await results).rows[0].booking_id
         await client.query('COMMIT;')
