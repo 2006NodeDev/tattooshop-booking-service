@@ -61,6 +61,7 @@ bookingRouter.get('/customer/:userId', async(req:Request, res:Response, next:Nex
 bookingRouter.post('/newbooking', async(req:any, res:Response, next:NextFunction)=>{
     console.log(req.body);
     let{
+        customer,
         style,
         size,
         location,
@@ -71,7 +72,7 @@ bookingRouter.post('/newbooking', async(req:any, res:Response, next:NextFunction
         date
     } = req.body
 
-    let customer = req.user.user_id
+    //let customer = req.user.user_id
     //console.log(author)
     if( !customer || !style || !size  || !location){
         next(new BookingInputError())
